@@ -5,6 +5,7 @@
 typedef struct _Node
 {
     int num;
+    int node_Height;
     struct _Node *parent;
     struct _Node *right;
     struct _Node *left;
@@ -26,7 +27,7 @@ int main(void)
 }
 
 // func get_ArraySize que calcula o tamanho do array
-int get_ArraySize(char *buffer)
+int getArraySize(char *buffer)
 {
     int size = 1;
     for (int i = 0; buffer[i] != '\0'; i++)
@@ -40,7 +41,7 @@ int get_ArraySize(char *buffer)
 }
 
 // func get_Integers separa os numeros e coloca no array
-int *get_Integers(char *buffer, int ArraySize)
+int *getIntegers(char *buffer, int ArraySize)
 {
     int *array = (int *)malloc(sizeof(int) * ArraySize);
 
@@ -63,33 +64,54 @@ int *get_Integers(char *buffer, int ArraySize)
     return array;
 }
 
+void mainFunction(char *buffer)
+{
+    while (buffer != NULL)
+    {
+        int *array = getIntegers(buffer, getArraySize(buffer));
+    }
+}
+
 // func criar node
-Node *create_Node(int num)
+Node *createNode(int num)
 {
     Node *new_Node = (Node *)malloc(sizeof(Node));
     new_Node->num = num;
+    new_Node->node_Height = 0;
     new_Node->parent = NULL;
     new_Node->right = NULL;
     new_Node->left = NULL;
     return new_Node;
 }
 
+// Retorna a altura de um node especifico
+int getNodeHeight(Node *leaf)
+{
+    if (leaf == NULL)
+        return -1;
+    return getNodeHeight(leaf->parent) + 1;
+}
+
 // func para inserir um node na arvore
-void insert_Element(Node *root, Node *node)
+Node *insertElement(Node *root, int num)
 {
     if (root == NULL)
+        return createNode(num);
+
+    if (num < root->num)
     {
-        root = node;
-    }
-    else if (node->num < root->num)
-    {
-        insert_Element(root->left, node);
+        Node *leftChild = insertElement(root->left, num);
+        leftChild->parent = root;
+        leftChild->node_Height = getNodeHeight(leftChild);
+        return leftChild;
     }
     else
     {
-        insert_Element(root->right, node);
+        Node *rightChild = insertElement(root->right, num);
+        rightChild->parent = root;
+        rightChild->node_Height = getNodeHeight(rightChild);
+        return rightChild;
     }
-    // calcular a altura do nó
 }
 
 // func para calcular altura da arvore para cada node inserido

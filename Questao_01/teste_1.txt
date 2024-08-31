@@ -1,0 +1,17 @@
+0 1 1 2 2 2 2 3 max 18 alt 2 pred 15
+0 1 1 2 2 3 2 max 10 alt 1 pred 9
+0 1 1 2 2 2 2 3 3 3 max 35 alt 2 pred 30
+0 1 1 2 2 2 2 max 70 alt 2 pred 60
+0 1 1 2 2 3 max 15 alt 3 pred 10
+0 1 2 1 2 2 3 max 7 alt 3 pred 6
+0 1 1 2 2 2 2 3 3 3 max 25 alt 2 pred 20
+0 1 1 2 2 2 2 3 3 max 11 alt 2 pred 9
+0 1 1 2 2 2 2 3 3 3 max 80 alt 2 pred 70
+0 1 1 2 2 2 2 max 30 alt 2 pred 25
+0 1 1 2 2 2 2 3 3 3 max 40 alt 2 pred 38
+0 1 1 2 2 2 2 max 23 alt 2 pred 21
+0 1 1 2 2 2 2 3 3 3 max 100 alt 2 pred 90
+0 1 1 2 2 2 2 3 3 max 46 alt 2 pred 41
+0 1 1 2 2 2 2 3 3 3 max 175 alt 2 pred 150
+0 1 1 2 2 2 2 3 3 max 55 alt 2 pred 45
+0 max 18 alt 0 NaN

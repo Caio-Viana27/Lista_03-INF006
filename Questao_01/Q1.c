@@ -68,7 +68,7 @@ void mainFunction(FILE *input, FILE *output)
         printArray(output, listOfHeights, size);
         Node *max = getMaxElement(T->root);
         Node *pred = getPredecessor(max);
-        fprintf(output, "max %d alt %d ", max->num, max->node_Height, pred->num);
+        fprintf(output, "max %d alt %d ", max->num, max->node_Height);
         if (pred == NULL)
             fprintf(output, "NaN");
         else

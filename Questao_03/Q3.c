@@ -28,10 +28,10 @@ void freeTree(Node *root);
 
 int main(void)
 {
-    FILE *input = fopen("teste_03.in", "r"); // L2Q3.in || teste_03.in
+    FILE *input = fopen("L2Q3.in", "r"); // L2Q3.in || teste_03.in
     if (input == NULL)
         return 1;
-    FILE *output = fopen("teste_03.out", "w+"); // L2Q3.out || teste_03.out
+    FILE *output = fopen("L2Q3.out", "w+"); // L2Q3.out || teste_03.out
     if (output == NULL)
         return 1;
 
